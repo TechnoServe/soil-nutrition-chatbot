@@ -1,0 +1,10 @@
+<% if alert.present? || notice.present? %>
+  <div id="error_explanation" data-turbo-cache="false">
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+      <% if notice.present? %>
+        <p class="notice alert alert-warning"><%= notice %></p>
+      <% end %>
+  </div>
+<% end %>

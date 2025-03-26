@@ -1,0 +1,23 @@
+body.devise-body
+  .login-container
+    .login-headers
+      = image_tag Rails.configuration.x.project_settings.logo_url, class: 'auth-form-logo'
+      h1.main-header
+        |  Enter OTP 
+      h5.secondary-header
+        |  We've sent the OTP to 
+        span
+          = @email
+    = render '/layouts/shared/error_messages'
+    .otp-form
+      = form_tag('/validate_otp') do
+        .field
+          = hidden_field_tag :email, @email
+        .form-inputs
+          .resend-cta-cotainer
+            label
+              |  OTP 
+            = link_to "Resend OTP", resend_otp_path(email: @email), class: 'resend-otp-btn'
+          = password_field_tag :otp, nil, class: 'form-control', placeholder: 'Enter the OTP'
+        .actions
+          = submit_tag "Log in", class: 'login-form-btn'

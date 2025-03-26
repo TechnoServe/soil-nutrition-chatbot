@@ -1,0 +1,104 @@
+name,constant_type,slug,parent_name,position,carbon_content
+Chard,crop,,,,,
+Celery,crop,,,,,
+Beetroot,crop,,,,,
+Broccoli,crop,,,,,
+Cocoa,crop,,,,,
+Chives,crop,,,,,
+Chile,crop,,,,,
+Coriander,crop,,,,,
+Cauliflower,crop,,,,,
+Peach/Plum,crop,,,,,
+Spinach,crop,,,,,
+Tomato,crop,,,,,
+Mango,crop,,,,,
+Orange,crop,,,,,
+Potato,crop,,,,,
+Parsley,crop,,,,,
+Radish,crop,,,,,
+Watermelon,crop,,,,,
+Banana,crop,,,,,
+Persian Lemon,crop,,,,,
+Strawberry,crop,,,,,
+
+Very Low,desired_productivity,,,,
+Low,desired_productivity,,,,
+Average,desired_productivity,,,,
+High,desired_productivity,,,,
+Very High,desired_productivity,,,,
+
+Aguascalientes,state,,,,
+Baja California,state,,,,
+Baja California Sur,state,,,,
+Campeche,state,,,,
+Chiapas,state,,,,
+Chihuahua,state,,,,
+Ciudad de México,state,,,,
+Coahuila de Zaragoza,state,,,,
+Colima,state,,,,
+Durango,state,,,,
+Guanajuato,state,,,,
+Guerrero,state,,,,
+Hidalgo,state,,,,
+Jalisco,state,,,,
+México,state,,,,
+Michoacán de Ocampo,state,,,,
+Morelos,state,,,,
+Nayarit,state,,,,
+Nuevo León,state,,,,
+Oaxaca,state,,,,
+Puebla,state,,,,
+Querétaro,state,,,,
+Quintana Roo,state,,,,
+San Luis Potosí,state,,,,
+Sinaloa,state,,,,
+Sonora,state,,,,
+Tabasco,state,,,,
+Tamaulipas,state,,,,
+Tlaxcala,state,,,,
+Veracruz de Ignacio de la Llave,state,,,,
+Yucatán,state,,,,
+Zacatecas,state,,,,
+
+N,nutrient,,,,
+P2O5,nutrient,,,,
+K2O,nutrient,,,,
+CaO,nutrient,,,,
+MgO,nutrient,,,,
+S,nutrient,,,,
+Fe,nutrient,,,,
+Zn,nutrient,,,,
+Mn,nutrient,,,,
+Cu,nutrient,,,,
+B,nutrient,,,,
+
+Bocashi,organic_matter,,,,12.90
+Compost,organic_matter,,,,16.75
+Goat manure,organic_matter,,,,30.60
+Rabbit manure,organic_matter,,,,37.00
+Pig manure,organic_matter,,,,26.30
+Cow manure,organic_matter,,,,28.40
+Chicken manure,organic_matter,,,,31.40
+Lombricompost,organic_matter,,,,22.50
+Rice straw,organic_matter,,,,4.50
+Coffee pulp,organic_matter,,,,52.00
+Urban solid waste,organic_matter,,,,15.60
+Vernicompost,organic_matter,,,,16.75
+
+Gram,unit,g,,,,,,
+Kilo Gram,unit,kg,,,,,,
+
+Agricultural lime,amendment,,,,
+Dolomite lime,amendment,,,,
+Organic matter,amendment,,,,
+First year agricultural gypsum and second year dolomite lime,amendment,,,,
+First year agricultural gypsum and second year organic matter,amendment,,,,
+Agricultural Gypsum,amendment,,,,
+
+Male,gender,,,,
+Female,gender,,,,
+
+From 16 to 29 years,age_range,,,,
+From 30 to 50 years,age_range,,,,
+From 50 to 65 years,age_range,,,,
+Above 65 years,age_range,,,,

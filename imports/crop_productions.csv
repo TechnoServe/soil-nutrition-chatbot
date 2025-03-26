@@ -1,0 +1,101 @@
+crop,desired_productivity,productivity
+Chard,High,10
+Chard,Low,5
+Chard,Average,7
+Chard,Very High,12
+Chard,Very Low,3
+Celery,High,48
+Celery,Low,37
+Celery,Average,43
+Celery,Very High,50
+Celery,Very Low,30
+Beetroot,High,22
+Beetroot,Low,16
+Beetroot,Average,19
+Beetroot,Very High,25
+Beetroot,Very Low,14
+Broccoli,High,15
+Broccoli,Low,9
+Broccoli,Average,12
+Broccoli,Very High,18
+Broccoli,Very Low,7
+Cocoa,High,0.3
+Cocoa,Low,0.08
+Cocoa,Average,0.15
+Cocoa,Very High,0.5
+Cocoa,Very Low,0.05
+Chives,High,15
+Chives,Low,10
+Chives,Average,13
+Chives,Very High,18
+Chives,Very Low,8
+Chile,High,35
+Chile,Low,25
+Chile,Average,30
+Chile,Very High,40
+Chile,Very Low,18
+Coriander,High,18
+Coriander,Low,12
+Coriander,Average,15
+Coriander,Very High,22
+Coriander,Very Low,8
+Cauliflower,High,23
+Cauliflower,Low,15
+Cauliflower,Average,19
+Cauliflower,Very High,26
+Cauliflower,Very Low,10
+Peach/Plum,High,12
+Peach/Plum,Low,6
+Peach/Plum,Average,8
+Peach/Plum,Very High,16
+Peach/Plum,Very Low,4
+Spinach,High,35
+Spinach,Low,20
+Spinach,Average,30
+Spinach,Very High,40
+Spinach,Very Low,15
+Tomato,High,220
+Tomato,Low,140
+Tomato,Average,180
+Tomato,Very High,260
+Tomato,Very Low,100
+Mango,High,20
+Mango,Low,8
+Mango,Average,12
+Mango,Very High,25
+Mango,Very Low,5
+Orange,High,25
+Orange,Low,10
+Orange,Average,15
+Orange,Very High,30
+Orange,Very Low,6
+Potato,High,30
+Potato,Low,15
+Potato,Average,25
+Potato,Very High,40
+Potato,Very Low,10
+Parsley,High,23
+Parsley,Low,18
+Parsley,Average,20
+Parsley,Very High,25
+Parsley,Very Low,15
+Radish,High,18
+Radish,Low,10
+Radish,Average,15
+Radish,Very High,20
+Radish,Very Low,8
+Watermelon,High,35
+Watermelon,Low,20
+Watermelon,Average,30
+Watermelon,Very High,40
+Watermelon,Very Low,15
+Persian Lemon,High,20
+Persian Lemon,Low,10
+Persian Lemon,Average,15
+Persian Lemon,Very High,25
+Persian Lemon,Very Low,5
+Strawberry,High,55
+Strawberry,Low,15
+Strawberry,Average,30
+Strawberry,Very High,80
+Strawberry,Very Low,10

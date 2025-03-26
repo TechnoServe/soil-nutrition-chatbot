@@ -1,0 +1,14 @@
+body.devise-body
+  .login-container
+    .login-headers
+      = image_tag Rails.configuration.x.project_settings.logo_url, class: 'auth-form-logo'
+      h1.main-header = Rails.configuration.x.project_settings.name 
+      h5.secondary-header
+        | Enter your email to get started
+    = render '/layouts/shared/error_messages'
+    .login-form
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-inputs
+          = f.input :email, required: false, autofocus: true, input_html: { placeholder: 'Enter your email', autocomplete: 'email', class: 'login-email-field form-control' }
+        .form-actions
+          = f.button :submit, 'Continue', id: 'login-submit-btn', class: 'login-form-btn'

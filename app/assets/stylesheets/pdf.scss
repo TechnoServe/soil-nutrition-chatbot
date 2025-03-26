@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.pdfs {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  p {
+    margin: 0;
+  }
+  font-size: 14px;
+}
+
+.pdf-container {
+  width: 95%;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border: 1px solid #eee;
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    img {
+      max-width: 200px;
+    }
+  }
+}
+
+.result-pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.5rem;
+
+  thead {
+    background-color: #eee;
+
+    th {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+  }
+
+  tbody {
+    td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    td[colspan="4"] {
+      text-align: right;
+      &.sum-column {
+        background: #eee;
+      }
+    }
+  }
+}

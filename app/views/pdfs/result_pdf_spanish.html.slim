@@ -1,0 +1,93 @@
+.pdfs
+  .pdf-container
+    div.logo-container
+      = image_tag 'logo.png', alt: 'Techno Serve Logo'
+    h2 Solicitud de Evaluación de Suelos 
+
+    table.result-pdf-table
+      thead
+        tr
+          th Solicitud de Evaluación de Suelos ID
+          th Nombre del productor
+          th Nombre de la parcela
+          th Cultivo
+          th Productividad deseada
+          th Fertirriego
+          th Productividad deseada valor
+      tbody
+        tr
+          td = @soil_evaluation_request.id
+          td = @soil_evaluation_request.producer_name
+          td = @soil_evaluation_request.parcel_name
+          td = @soil_evaluation_request.crop.spanish_translation.name
+          td = I18n.t(@soil_evaluation_request.desired_productivity.name.parameterize.underscore)
+          td = I18n.t(@soil_evaluation_request.fertigation ? 'yes_' : 'no_')
+          td = @soil_evaluation_request.desired_productivity_amount
+
+    h3 Recomendación inorgánica
+    table.result-pdf-table
+      thead
+        tr
+          th Nombre de la enmienda
+          th Resultado
+          th Nombre de enmienda recomendado
+          th Cantidad en Kg/Ha
+          th Nombre de enmienda recomendado
+          th Cantidad en Kg/Ha
+      tbody
+        - @soil_evaluation_request.inorganic_recommendation.inorganic_recommendation_rows.each do |inorganic_recommendation_row|
+          tr
+            td = inorganic_recommendation_row.amendment.spanish_translation.name
+            td = I18n.t(inorganic_recommendation_row.formatted_result&.parameterize&.underscore + '_')
+            td = I18n.t(inorganic_recommendation_row.first_element_name&.parameterize&.underscore, default: nil)
+            td = inorganic_recommendation_row.first_element_amount
+            td = I18n.t(inorganic_recommendation_row.second_element_name&.parameterize&.underscore, default: nil)
+            td = inorganic_recommendation_row.second_element_amount
+
+    - if @soil_evaluation_request.organic_recommendation.present?
+      h3 Recomendación orgánica
+      p Esta enmienda orgánica puede aplicarse en 1, 2 o 3 ciclos productivos, y la dosis puede dividirse de manera equitativa entre dichos ciclos
+      table.result-pdf-table
+        thead
+          tr
+            th Materia orgánica
+            th Cantidad en Kg/ha
+        tbody
+          tr
+            td = @soil_evaluation_request.organic_matter.spanish_translation.name
+            td = @soil_evaluation_request.organic_recommendation.amount
+
+    h3 Resultados de la evaluación del suelo
+    - result_type = 'nutrient_distribution'
+    - results = @soil_evaluation_request.soil_evaluation_result.send("#{result_type}_results")
+    h4 = I18n.t(result_type)
+    table.result-pdf-table
+      thead
+        tr
+          th = translate_index_field_header(::SoilEvaluationResult::INDEX_FIELD_HEADERS[4])
+          th N (kg)
+          th P2O5 (kg)
+          th K2O (kg)
+          th CaO (kg)
+          th MgO (kg)
+          th S (kg)
+          th Fe (g)
+          th Zn (g)
+          th Mn (g)
+          th Cu (g)
+          th B (g)
+      tbody
+        - results.each do |result|
+          tr
+            td = result.translated_index_field
+            td = result.n_amount
+            td = result.p2o5_amount
+            td = result.k2o_amount
+            td = result.cao_amount
+            td = result.mgo_amount
+            td = result.s_amount
+            td = result.fe_amount
+            td = result.zn_amount
+            td = result.mn_amount
+            td = result.cu_amount
+            td = result.b_amount

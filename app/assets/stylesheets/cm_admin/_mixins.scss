@@ -1,0 +1,19 @@
+@import '_color.scss';
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin font($size: $t3-text, $color: $primary-text-clr, $weight: normal) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+  }
+  
+  @mixin transition-linear {
+    transition: all .2s linear;
+  }
+  

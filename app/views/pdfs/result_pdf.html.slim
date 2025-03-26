@@ -1,0 +1,93 @@
+.pdfs
+  .pdf-container
+    div.logo-container
+      = image_tag 'logo.png', alt: 'Techno Serve Logo'
+    h2 Soil Evaluation Request 
+
+    table.result-pdf-table
+      thead
+        tr
+          th Soil Evaluation Request ID
+          th Producer Name
+          th Parcel Name
+          th Crop Name
+          th Desired Productivity
+          th Fertigation
+          th Desired Productivity Amount
+      tbody
+        tr
+          td = @soil_evaluation_request.id
+          td = @soil_evaluation_request.producer_name
+          td = @soil_evaluation_request.parcel_name
+          td = @soil_evaluation_request.crop_name
+          td = @soil_evaluation_request.desired_productivity.name
+          td = @soil_evaluation_request.fertigation ? 'Yes' : 'No'
+          td = @soil_evaluation_request.desired_productivity_amount
+
+    h3 Inorganic Recommendation
+    table.result-pdf-table
+      thead
+        tr
+          th Amendment Name
+          th Result
+          th Recommended Amendment Name
+          th Amount in Kg/Ha
+          th Recommended Amendment Name
+          th Amount in Kg/Ha
+      tbody
+        - @soil_evaluation_request.inorganic_recommendation.inorganic_recommendation_rows.each do |inorganic_recommendation_row|
+          tr
+            td = inorganic_recommendation_row.amendment_name
+            td = inorganic_recommendation_row.formatted_result
+            td = inorganic_recommendation_row.first_element_name
+            td = inorganic_recommendation_row.first_element_amount
+            td = inorganic_recommendation_row.second_element_name
+            td = inorganic_recommendation_row.second_element_amount
+
+    - if @soil_evaluation_request.organic_recommendation.present?
+      h3 Organic Recommendation
+      p This organic amendment can be applied in 1, 2 or 3 productive cycles, and the dose can be divided equally between these cycles
+      table.result-pdf-table
+        thead
+          tr
+            th Organic Matter Name
+            th Amount in Kg/ha
+        tbody
+          tr
+            td = @soil_evaluation_request.organic_matter.name
+            td = @soil_evaluation_request.organic_recommendation.amount
+
+    h3 Soil Evaluation Results
+    - result_type = 'nutrient_distribution'
+    - results = @soil_evaluation_request.soil_evaluation_result.send("#{result_type}_results")
+    h4 = result_type.to_s.titleize
+    table.result-pdf-table
+      thead
+        tr
+          th = ::SoilEvaluationResult::INDEX_FIELD_HEADERS[4]
+          th N (kg)
+          th P2O5 (kg)
+          th K2O (kg)
+          th CaO (kg)
+          th MgO (kg)
+          th S (kg)
+          th Fe (g)
+          th Zn (g)
+          th Mn (g)
+          th Cu (g)
+          th B (g)
+      tbody
+        - results.each do |result|
+          tr
+            td = result.index_field
+            td = result.n_amount
+            td = result.p2o5_amount
+            td = result.k2o_amount
+            td = result.cao_amount
+            td = result.mgo_amount
+            td = result.s_amount
+            td = result.fe_amount
+            td = result.zn_amount
+            td = result.mn_amount
+            td = result.cu_amount
+            td = result.b_amount

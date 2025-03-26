@@ -1,0 +1,8 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= Rails.configuration.x.project_settings.slug %>_test
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
